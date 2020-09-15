@@ -19,6 +19,7 @@
 		2AF61A9C24FECE4B00000081 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF61A9B24FECE4B00000081 /* Meal.swift */; };
 		2AF61A9D24FECE4B00000081 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF61A9B24FECE4B00000081 /* Meal.swift */; };
 		2AF61A9F24FED65400000081 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF61A9E24FED65400000081 /* MealTableViewCell.swift */; };
+		2AFF2C5A251149490068C8F9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2AFF2C59251149490068C8F9 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2AC2FF5724D9DCDB003FDE54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AF61A9B24FECE4B00000081 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		2AF61A9E24FED65400000081 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		2AFF2C59251149490068C8F9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				2AC2FF3D24D9DCCD003FDE54 /* FoodTracker */,
 				2AC2FF5424D9DCDB003FDE54 /* FoodTrackerTests */,
 				2AC2FF3C24D9DCCD003FDE54 /* Products */,
+				2AFF2C59251149490068C8F9 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,6 +198,7 @@
 			files = (
 				2AC2FF4B24D9DCDB003FDE54 /* LaunchScreen.storyboard in Resources */,
 				2AC2FF4824D9DCDB003FDE54 /* Assets.xcassets in Resources */,
+				2AFF2C5A251149490068C8F9 /* README.md in Resources */,
 				2AC2FF4624D9DCCD003FDE54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
