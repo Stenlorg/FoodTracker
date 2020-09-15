@@ -1,3 +1,3 @@
 # FoodTracker
 
-This is a test for gut pull
+This is a test for git pull
