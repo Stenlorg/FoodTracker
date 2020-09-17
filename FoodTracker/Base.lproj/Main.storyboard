@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MealViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="6FE-2x-Odh">
-                                <rect key="frame" x="16" y="81" width="382" height="506"/>
+                                <rect key="frame" x="16" y="113" width="382" height="506"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sy4-fg-qbP">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
@@ -125,6 +125,7 @@
                                     <outlet property="nameLabel" destination="pqO-Jg-QK8" id="kat-n1-NVK"/>
                                     <outlet property="photoImageView" destination="ZXB-z4-jYZ" id="Qra-bY-N3A"/>
                                     <outlet property="ratingControl" destination="WsP-re-Sv3" id="L19-U7-SU9"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="kte-tO-8X0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -136,7 +137,7 @@
                     <navigationItem key="navigationItem" title="Your Meals" id="oMn-x6-IVn">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cNm-Hj-ufv">
                             <connections>
-                                <segue destination="yAB-ep-P5s" kind="presentation" id="asl-LW-UDf"/>
+                                <segue destination="yAB-ep-P5s" kind="presentation" identifier="AddItem" id="asl-LW-UDf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -179,9 +180,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCa-UG-gEW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="107.8125"/>
+            <point key="canvasLocation" x="1141" y="550"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kte-tO-8X0"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="defaultImage" width="540" height="540"/>
     </resources>
