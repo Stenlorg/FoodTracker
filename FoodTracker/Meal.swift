@@ -16,10 +16,14 @@ private struct PropertyKey {
     static let rating = "rating"
 }
 
-class Meal: NSCoding {
+
+class Meal: NSObject, NSCoding {
     var name: String
     var photo: UIImage?
     var rating: Int
+    
+    private static let documentsFolder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let mealFileUrl = Meal.documentsFolder.appendingPathComponent("meal")
     
     required convenience init? (coder: NSCoder) {
             

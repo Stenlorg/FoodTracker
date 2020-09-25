@@ -21,13 +21,39 @@ class MealTableViewController: UITableViewController {
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem
 
-        loadSavedMeals()
+        //loadSampleMeals()
+        if let savedMeals = loadSavedMeals(), !savedMeals.isEmpty {
+            meals = savedMeals
+        } else {
+            loadSampleMeals()
+        }
         
         
     }
 
     
-    func loadSavedMeals() {
+    func  saveMeals() {
+        do {
+            let archiveData = try NSKeyedArchiver.archivedData(withRootObject: meals, requiringSecureCoding: false)
+            try archiveData.write(to: Meal.mealFileUrl)
+        } catch {
+            print("Unexpected error \(error)")
+        }
+    }
+    
+    func loadSavedMeals() -> [Meal]?{
+        do {
+            let archiveData = try Data(contentsOf: Meal.mealFileUrl)
+            //return try NSKeyedUnarchiver.unarchivedObject(ofClasses: [Meal.self], from: archiveData) as! [Meal]
+            return try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(archiveData) as? [Meal]
+    
+        } catch {
+            print("Unexpected error \(error)")
+            return nil
+        }
+    }
+    
+    func loadSampleMeals() {
         let photo1 = UIImage(named:"meal1")
         let photo2 = UIImage(named:"meal2")
         let photo3 = UIImage(named:"meal3")
@@ -85,6 +111,7 @@ class MealTableViewController: UITableViewController {
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
         }
+        saveMeals()
     }
 
     
@@ -100,16 +127,19 @@ class MealTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             meals.remove(at: indexPath.row)
+            saveMeals()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
+        
     }
 
 
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         meals.swapAt(fromIndexPath.row, to.row)
+        saveMeals()
     }
 
 
